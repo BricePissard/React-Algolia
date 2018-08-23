@@ -1,13 +1,5 @@
-This project presents a simple React app with data stored in Algolia
+This project presents a simple React app with data stored in Algolia.
+The app is an 100% Javascript Web-App.
+The Json datasets have been reformatted and pushed to Algolia server.
 
-## Table of Contents
-
-- [Updating to New Releases](#updating-to-new-releases)
-- [Sending Feedback](#sending-feedback)
-- [Folder Structure](#folder-structure)
-- [Available Scripts](#available-scripts)
-  - [npm start](#npm-start)
-  - [npm test](#npm-test)
-  - [npm run build](#npm-run-build)
-  - [npm run eject](#npm-run-eject)
-- [Supported Browsers](#supported-browsers)
+![alt text](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/preview.png)
