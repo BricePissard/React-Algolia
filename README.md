@@ -45,3 +45,9 @@ A new file have been created locally:
 ./src/data/restaurants_merge.json
 ```
 This file have to be uploaded in Algolia website: https://www.algolia.com/apps/
+
+
+# Debug
+For debugging purpose some tracing functions have been kept open to see the process while using the app.
+Open the Chrome Dev Toolbar by pressing: [ALT]+[COMMAND]+[J]
+![alt text](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/debug.png)
