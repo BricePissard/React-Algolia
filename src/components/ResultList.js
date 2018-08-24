@@ -34,7 +34,8 @@ class ResultList extends Component {
         page: this.props.page,
         limit: this.props.limit,
         limitTotal: this.props.limitTotal,
-        geo: this.props.geo
+        geo: this.props.geo,
+        isMenuHidden: this.props.isMenuHidden
       };
     } catch(err) {
       if (err && Global && _.has(Global, 'exception')) {
@@ -51,24 +52,21 @@ class ResultList extends Component {
 
   render():any
   {
-    let list:Array<Object> = [];
     try {
-      const page:number = this.state.page;
       const limit:number = this.props.limit;
-      const total:number = this.props.total;
-      const time:number = Math.round(this.props.time)/1000;
-      //const from:number = page * limit;
-      //const to:number = limit + (page * limit);
       const results = this.props.results && this.props.results.slice(0, limit);
+      let list:Array<Object> = [];
 
       /*SHOW ME*/Global.console('- ResultList.render()', Global.PAGE_COLORS.RESULT_LIST, {results});
 
       results.map((resto:Object,i:number):void=>list.push(this._getRestaurant(resto,i)));
 
       return (
-        <section className={"results"}>
-          <h1>{total} results found <i>in {time}seconds</i></h1>
-          {list}
+        <section
+          className={"results"}
+          onClick={this._onControlMenu.bind(this)}>
+          {this._getTitle()}
+          {(_.size(list)>0)?list:this._getEmptyList()}
           {this._getPagination()}
         </section>
       );
@@ -84,6 +82,42 @@ class ResultList extends Component {
 
 
   // -- VIEWS
+
+  _getTitle():any
+  {
+    try {
+      const total:number = this.props.total;
+      const time:number = Math.round(this.props.time)/1000;
+
+      /*SHOW ME*///Global.console('- ResultList._getTitle()', Global.PAGE_COLORS.RESULT_LIST);
+
+      return (
+        <h1>{total} results found <i>in {time}seconds</i></h1>
+      );
+    } catch(err) {
+      if (err && Global && _.has(Global, 'exception')) {
+        Global.exception('ResultList._getTitle().catch()', err);
+      }
+    }
+  }
+
+  _getEmptyList():any
+  {
+    try {
+      /*SHOW ME*///Global.console('- ResultList._getEmptyList()', Global.PAGE_COLORS.RESULT_LIST);
+
+      return (
+        <div className={"emptyList"}>
+          <h3>:( No Restaurants found</h3>
+          <h5>Please affinates your request with filters</h5>
+        </div>
+      );
+    } catch(err) {
+      if (err && Global && _.has(Global, 'exception')) {
+        Global.exception('ResultList._getEmptyList().catch()', err);
+      }
+    }
+  }
 
   _getRestaurant(resto:Object, i:number):any
   {
@@ -209,7 +243,7 @@ class ResultList extends Component {
       return (total>0) ? (
         <div className={"paginationC"}>
           <Pagination
-            hideFirstLastPages={false}
+            hideFirstLastPages={this.props.isMenuHidden}
             pageRangeDisplayed={5}
             activePage={page}
             itemsCountPerPage={limit}
@@ -228,6 +262,8 @@ class ResultList extends Component {
 
 
 
+
+
   // -- CONTROLLERS
 
   _onChange(page:number):void
@@ -240,6 +276,28 @@ class ResultList extends Component {
     } catch(err) {
       if (err && Global && _.has(Global, 'exception')) {
         Global.exception('ResultList._onChange().catch()', err);
+      }
+    }
+  }
+
+  _onControlMenu(e:Object):void
+  {
+    try {
+      const width:number = window.innerWidth;
+      if (width <= 640 && this.state.isMenuHidden === false) {
+        e.preventDefault();
+        /*SHOW ME*/Global.console('- ResultList._onControlMenu()', Global.PAGE_COLORS.RESULT_LIST);
+        this.setState({
+          isMenuHidden: !this.state.isMenuHidden
+        }, ():void => {
+          this.props.setMenu(
+            this.state.isMenuHidden
+          );
+        });
+      }
+    } catch(err) {
+      if (err && Global && _.has(Global, 'exception')) {
+        Global.exception('ResultList._onControlMenu().catch()', err);
       }
     }
   }

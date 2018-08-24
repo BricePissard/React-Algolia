@@ -10,12 +10,23 @@ include in the "Custom Ranking."
 Cheers, George
 
 Answer 1:
+Hi George,
+first of all thanks for contacting Algolia, for database concern you're in good hands.
+Regarding your questions:
+- A record is the name given to the data you've stored in a database and it is structured as pair of key and value.
+If you're familiar with Excel let say that a record is the value of a cell.
+- An index is a set of technics that facilitate the access to a given data on a database.
+When you place an index on a database field, it modify the place where the data is
+stored and the its hierarchy structure and several additional data is created to speed-up the search requests.
+
+https://www.algolia.com/doc/guides/ranking/custom-ranking/
+
 ________________________________________________________________________________
 
 Question 2:
 Hello,
 Sorry to give you the kind of feedback that I know you do not want to hear,
-but I really hate the new dashboard design. Clearing and deleting indexes are 
+but I really hate the new dashboard design. Clearing and deleting indexes are
 now several clicks away. I am needing to use these features while iterating,
 so this is inconvenient.
 Regards, Matt

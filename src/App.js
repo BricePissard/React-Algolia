@@ -40,6 +40,7 @@ class App extends Component {
       return {
         index: undefined,
         client: undefined,
+        isMenuHidden: false,
         // -- search menu
         search: {
           query: '',
@@ -139,7 +140,7 @@ class App extends Component {
       return (
         <div className={"App"}>
           {this._getHeader()}
-          <section>
+          <section className={this.state.isMenuHidden?'hidden':''}>
             {this._getSideMenu()}
             {this._getResultList()}
           </section>
@@ -167,8 +168,10 @@ class App extends Component {
       /*SHOW ME*///Global.console('- App._getHeader()', Global.PAGE_COLORS.APP);
       return(
         <SearchMenu
+          isMenuHidden={this.state.isMenuHidden}
           setSearch={this._setSearch.bind(this)}
           setLocation={this._setLocation.bind(this)}
+          setMenu={this._setMenu.bind(this)}
         />
       );
     } catch(err) {
@@ -224,6 +227,8 @@ class App extends Component {
           limitTotal={this.state.pages.limitTotal}
           geo={this.state.geo}
           setPage={this._setPage.bind(this)}
+          setMenu={this._setMenu.bind(this)}
+          isMenuHidden={this.state.isMenuHidden}
         />
       );
     } catch(err) {
@@ -405,6 +410,18 @@ class App extends Component {
     }
   }
 
+  _setMenu(isMenuHidden:boolean):void
+  {
+    try {
+      /*SHOW ME*/Global.console('- App._setMenu()', Global.PAGE_COLORS.APP, {isMenuHidden});
+      this._updateRender = true;
+      this.setState({isMenuHidden});
+    } catch (err) {
+      if (err && Global && _.has(Global, 'exception')) {
+        Global.exception('App._setMenu().catch()', err);
+      }
+    }
+  }
 
 
 

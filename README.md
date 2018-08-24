@@ -46,6 +46,22 @@ A new file have been created locally:
 ```
 This file have to be uploaded in Algolia website: https://www.algolia.com/apps/
 
+# Extra Features
+The purpose of this demo is to show how simple an accurate are Algolia services so some features have been added:
+- Add statistics on rating and payment modes like the ones next to the food types.
+![statistics](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/statistics.png)
+- Pagination at the bottom of the result list.
+![pagination](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/pagination.png)
+- Responsive CSS UI to adapt the view to the user screen.
+- A specific Mobile UI/UX to provide a better search experience on small devices.
+![mobile menu](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/preview_mobile_menu.png)
+![mobile](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/preview_mobile.png)
+
+- Add a location search field on the top bar to allow to search for a specific location to find the restaurants. nearby.
+![location search ](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/location_search.png)
+- Add the distance in the results of the restaurants if the location filter have been provided.
+![distance](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/distance.png)
+
 
 # Debug
 For debugging purpose some tracing functions have been kept open to see the process while using the app.

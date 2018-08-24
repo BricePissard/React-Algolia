@@ -1,11 +1,7 @@
 @charset "UTF-8";
-* {margin:0;padding:0;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-color:#eaeaea;text-rendering:optimizelegibility;font:1.8vw/1.231em Arial,Verdanna,sans-serif;}
-*::-moz-placeholder {color:#ccc;font-weight:normal;font-size:1.5vw;letter-spacing:.5px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
-*::-webkit-placeholder {color:#ccc;font-weight:normal;font-size:1.5vw;letter-spacing:.5px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
-::-webkit-input-placeholder {color:#ccc;font-weight:normal;font-size:1.5vw;letter-spacing:.5px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
-:-moz-placeholder {color:#ccc;font-weight:normal;font-size:1.5vw;letter-spacing:.5px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
-::-moz-placeholder {color:#ccc;font-weight:normal;font-size:1.5vw;letter-spacing:.5px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
-:-ms-input-placeholder {color:#ccc;font-weight:normal;font-size:1.5vw;letter-spacing:.5px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
+* {margin:0;padding:0;font:1.4vw/1.231em Arial,Verdanna,sans-serif;text-rendering:optimizelegibility;-webkit-box-sizing:border-box;-moz-box-sizing:border-box;box-sizing:border-box;border-color:#eaeaea;}
+*::-webkit-placeholder {color:#ccc;font-weight:normal;font-size:1.3vw;line-height:1.5vw;letter-spacing:.2px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
+::-webkit-input-placeholder {color:#ccc;font-weight:normal;font-size:1.3vw;line-height:1.5vw;letter-spacing:.2px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
 
 input {font-family:Arial,Verdana;-moz-border-bottom-colors:none;-moz-border-left-colors:none;-moz-border-right-colors:none;-moz-border-top-colors:none;-moz-box-sizing:border-box;vertical-align:middle;box-shadow:none;}
 input::-moz-focus-inner {border:0;}
@@ -20,21 +16,22 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
 
 /* -- HEADER -- */
 .App > header {background-color:#1A5D83;padding:2% 0;display:flex;align-content:center;justify-content:center;position:relative;}
+  .App > header > button.menu {display:none;}
   .App > header form.restaurants {min-width:100%;}
-    .App > header input {border-radius:5px;font-size:1.5vw;margin:.5%;min-width:93%;height:4vw;box-sizing:border-box;align-self:center;padding:1vw;border:none;}
+    .App > header input {border-radius:5px;font-size:14px;line-height:15px;margin:.5%;min-width:93%;height:4vw;box-sizing:border-box;align-self:center;padding:10px 0 10px 10px;border:none;}
   .App > header .location {position:absolute;top:24%;right:4%;border-left:3px dashed rgba(24,83,120,.1);min-width:30%;}
     .App > header .location > div {height:4vw;text-align:left;}
       .App > header .location > div input {background-color:transparent;border:none;height:100%;padding-left:12px;margin:0;}
       .autocomplete-dropdown-container {font-size:1.4vw;box-shadow:0 4px 9px rgba(0,0.1,0.6,0.05), 0 1px 2px rgba(0,0,0,0.1);width:calc(100% + 5px);margin-top:-2px;}
         .autocomplete-dropdown-container div span {font-size:1.3vw;line-height:2.5vw;padding:5px 0 5px 6%;border-bottom:1px solid #f9f9f9;display:inline-block;}
-    .App > header .location button {cursor:pointer;position:absolute;top:1px;right:0;font-size:1.8vw;line-height:3.8vw;color:rgba(26,93,131,.4);width:4vw;border-radius:0;border:none;height:4vw;min-width:0;margin:0;display:block;background-color:transparent;transition:all 0.2s cubic-bezier(.25,.8,.25,1);}
+    .App > header .location button {cursor:pointer;position:absolute;top:1px;right:0;font-size:15;line-height:26px;color:rgba(100,100,100,.4);width:4vw;border-radius:0;border:none;height:4vw;min-width:0;margin:0;display:block;background-color:transparent;transition:all 0.2s cubic-bezier(.25,.8,.25,1);}
     .App > header .location button:hover,
-    .App > header .location button:active {color:#rgba(26,93,131,.8);}
+    .App > header .location button:active {color:rgba(100,100,100,.8);}
 
 /* -- MAIN BLOCK -- */
 .App > section {border-radius:0 0 2px 2px;box-shadow:0 3px 10px rgba(0,0.1,0.6,0.22), 0 1px 2px rgba(0,0,0,0.24);transition:all 0.3s cubic-bezier(.25,.8,.25,1);background:#fff;display:flex;}
   .App > section .title {font-size:1.7vw;font-weight:bold;text-align:left;min-width:100%;}
-  .App > section > menu {width:30%;border-right:1px solid #eaeaea;padding:4% 0 3% 4%;}
+  .App > section > menu {width:30%;border-right:1px solid #eaeaea;padding:4% 0 3% 4%;transition:all 0.2s cubic-bezier(.25,.8,.25,1);}
     .App > section > menu ul {text-align:left;list-style:none;padding:0;margin:0.7vw 1vw 2vw 0.5vw;display:block;width:85%;}
     .App > section > menu .filter {padding:0;}
       .App > section > menu ul li {font-size:1.5vw;padding:2% 0 2% 5%;border-radius:5px;transition:all 0.2s cubic-bezier(.25,.8,.25,1);}
@@ -42,7 +39,7 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
       .App > section > menu ul li:active,
       .App > section > menu ul li.selected {background-color:#4A96C1;color:#fff;}
     /* -- Food Types -- */
-    .App > section > menu .food {text-align:left;}
+    .App > section > menu .food {text-align:left;margin-bottom:1.8vw;}
       .App > section > menu .food ul li {display:flex;justify-content:space-between;flex-basis:100%;cursor:pointer;}
         .App > section > menu .food ul li span {font-size:1.5vw;}
         .App > section > menu .food ul li i {font-size:1.3vw;line-height:2.3vw;color:#ccc;margin-right:10px;}
@@ -64,11 +61,16 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
         .App > section > menu .payment ul li i {font-size:1.3vw;line-height:2.3vw;color:#ccc;display:inline-block;text-align:right;float:right;margin-right:3%;}
 
   /* -- Result List -- */
-  .results {width:70%;align-items:stretch;background-color:#fff;display:flex;flex-direction:column;}
+  .results {width:70%;align-items:stretch;background-color:#fff;display:flex;flex-direction:column;transition:all 0.2s cubic-bezier(.25,.8,.25,1);}
     .results h1 {height:5vw;vertical-align:middle;text-align:left;padding:5% 0 0 5%;font-size:2vw;overflow:hidden;}
     .results h1:after{content:"";display:inline-block;height:0.5em;vertical-align:bottom;width:100%;margin-right:-100%;margin-left:20px;border-top:1px solid #ddd;}
       .results h1 i {font-size:1.3vw;font-weight:normal;opacity:.5;margin:0 5px;}
-  /* -- Result List > Restaurant -- */
+    .results .emptyList {height:100%;vertical-align:middle;padding:6% 0;}
+      .results .emptyList h3,
+      .results .emptyList h5 {color:#bbb;vertical-align:middle;display:block;justify-items:center;align-items:center;}
+      .results .emptyList h3 {font-size:1.7vw;padding:8px 0;}
+      .results .emptyList h5 {font-size:1.2vw;}
+  /* -- Result List > Restaurant row -- */
   .results a.result {cursor:pointer;padding-left:1vw;width:98%;display:flex;align-items:flex-start;flex-wrap:nowrap;transition:all 0.3s cubic-bezier(.25,.8,.25,1);border-bottom:.5px solid #f6f6f6;}
   .results a.result:hover,
   .results a.result:active {background-color:#f9f9f9;box-shadow:0 14px 28px rgba(0,0,0,0.05), 0 10px 10px rgba(0,0,0,0.02);border-radius:5px;}
@@ -76,7 +78,7 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
       .results a.result .imgC > img {height:12vw;width:12vw;border-radius:5px;margin:20% 15%;}
         .results a.result article {font-size:1.75vw;display:flex;flex-flow:column wrap;height:100%;align-items:left;margin:1vw 0 0 2vw;}
           .results a.result article h3 {align-self:flex-start;padding-top:1vw;font-size:1.6vw;text-align:left;font-weight:bold;}
-          .results a.result article > div {display:flex;flex-flow:row nowrap;height:100%;padding-top:1vw;}
+          .results a.result article > div {display:flex;flex-flow:row nowrap;height:100%;padding-top:1vw;color:#FFA15B;}
             .results a.result article > div ul {list-style:none;padding:0;display:flex;margin-left:1vw;margin-right:1vw;align-items:center;justify-content:left;}
               .results a.result article > div ul li {font-size:1.6vw;height:1.75vw;width:1.75vw;max-width:100%;max-height:100%;margin-right:1%;}
               .results a.result article > div ul li.full {color:#FFA15B;}
@@ -111,8 +113,64 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
 
 
 @media all and (max-width:640px) {
-	.App {padding:0;}
-  .title {font-weight:bold;font-size:3vw;}
-  .rating li b,
-  .payment ul li {font-size:3.5vw;}
+*::-webkit-placeholder {color:#ccc;font-weight:normal;font-size:12px;line-height:15px;letter-spacing:.2px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
+::-webkit-input-placeholder {color:#ccc;font-weight:normal;font-size:12px;line-height:15px;letter-spacing:.2px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
+
+body,.App, .App > section {height:calc(100vh - 52px);}
+.App {padding:0;}
+  .App > section .title {font-weight:bold;font-size:15px;}
+
+  /* -- HEADER -- */
+  .App > header {justify-content:flex-end;}
+    .App > header > button.menu {display:inline-block;background:transparent;border:none;color:#fff;text-align:center;font-size:18px;cursor:pointer;}
+    .App > header form.restaurants {min-width:93%;}
+      .App > header input {height:9vw;}
+    .App > header .location > div {display:none;}
+    .App > header .location button {top:-4px;right:-3px;line-height:38px;width:34px;height:34px;font-size:15px;}
+
+  /* -- MAIN BLOCK -- */
+  .App > section.hidden > menu {width:0px;overflow:hidden;padding:0;}
+  .App > section > menu {width:43%;padding-left:2%;background-color:#f7f7f7;}
+    .App > section > menu ul {width:95%;margin-right:0;}
+      .App > section > menu ul li {font-size:13px;}
+        /* -- Food Types -- */
+        .App > section > menu .food {margin-bottom:18px;}
+          .App > section > menu .food ul li span {font-size:14px;}
+          .App > section > menu .food ul li i,
+          .App > section > menu .rating ul li i,
+          .App > section > menu .payment ul li i {font-size:11px;line-height:15px;margin:0 5px 0 0;}
+        /* -- Rating -- */
+        .App > section > menu .rating ul li {margin:0;padding:2% 0 2% 6%;}
+          .App > section > menu .rating li b {font-size:13px;}
+        /* -- Payment Mode -- */
+        .App > section > menu .payment ul li {font-size:13px;padding:4px 0 4px 8px;letter-spacing:.3px;}
+
+  /* -- Result List -- */
+  .App > section.hidden .results {width:100%;}
+  .App > section .results {width:57%;opacity:.4;}
+  .App > section.hidden .results {opacity:1;}
+    .App > section .results h1 {height:auto;font-size:17px;}
+    .App > section .results h1:after {margin-left:0;}
+      .App > section .results h1 i {display:block;font-size:13px;}
+    .App > section .results .emptyList h3 {font-size:18px;}
+    .App > section .results .emptyList h5 {font-size:12px;}
+    /* -- Result List > Restaurant row -- */
+    .App > section .results a.result {padding:10px 0 0 10px}
+      .App > section .results a.result .imgC {width:calc(20vw + 5%);height:25vw;}
+        .App > section .results a.result .imgC > img {height:20vw;width:20vw;margin:1% 0 1% 7%;}
+      .App > section.hidden .results a.result .imgC {width:calc(30vw + 5%);height:34vw;}
+        .App > section.hidden .results a.result .imgC > img {height:30vw;width:30vw;}
+        .App > section .results a.result article {width:100%;font-size:13px;margin-left:20px;}
+          .App > section .results a.result article h3 {font-size:14px;}
+          .App > section .results a.result article > div {font-size:15px;}
+            .App > section .results a.result article > div ul{vertical-align:initial;align-items:initial;}
+              .App > section .results a.result article > div ul li {font-size:13px;width:auto;}
+            .App > section .results a.result article span {font-size:12px;line-height:16px;}
+            .App > section .results a.result article > div > span {display:none;}
+            .App > section.hidden .results a.result article > div > span {display:inline-block;margin-left:5px;}
+            .App > section .results a.result article > em {line-height:15px;font-size:11px;}
+
+    /* -- pagination -- */
+    .App > section.hidden .pagination > li > a,
+    .App > section.hidden .pagination > li > span {font-size:15px;padding:6px 20px;}
 }

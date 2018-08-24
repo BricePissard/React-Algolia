@@ -104,7 +104,7 @@ class FoodTypes extends Component {
   {
     try {
       /*SHOW ME*/Global.console('- FoodTypes._update()', Global.PAGE_COLORS.FOOD_TYPES, food);
-      food = ((this.state.food === food.name)? null:food && food.name || null);
+      food = ((this.state.food === food.name)? null:food.name || null);
       this.setState({food}, ():void => {
         console.log('herrr');
         this.props.update(food);
