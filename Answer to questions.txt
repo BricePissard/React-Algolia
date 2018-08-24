@@ -11,7 +11,7 @@ Cheers, George
 
 Answer 1:
 Hi George,
-first of all thanks for contacting Algolia, for database concerns you're in good hands.
+first of all thanks for contacting Algolia, for database concerns you're in good hands!
 Regarding your questions:
 
 - An index is the name given to place where you store your data in Algolia.
@@ -22,11 +22,11 @@ A record in Algolia is similar to a row result in a database request.
 The records are structured as pair of key/value, Algolia store the data in JSON format.
 Each records are optimized to speed-up the searching, filtering and ranking request.
 
-Algolia is here to simplify your work to not have to worry about technology,
-here is the description of Indexes and Records:
+Algolia is here to simplify your work, to not have to worry about technology,
+here is the description of the Indexes and the Records:
 https://www.algolia.com/doc/guides/getting-started/what-is-algolia/?language=javascript#vocabulary
 
-Regarding the "Custom Ranking" it depends on your records structure and on your
+Regarding the "Custom Ranking", it depends on your records structure and on your
 relevant business metrics to reorder.
 "Custom Ranking" allows you to reorder your results based on a second parameter
 that you have to defined in in your data.
@@ -76,13 +76,13 @@ Regards, Leo
 Answer 3:
 Hi Leo,
 
-first of all thanks for contacting Algolia, for database concerns you're in good hands.
+first of all thanks for contacting Algolia, for database concerns you're in good hands!
 Algolia provides a set of tools and services to easily integrate database request
 for small and large companies.
 
 If the data you want to manage through Algolia is small (<500Mo) and simply structured
 (<10 tables) the integration process will be simple (around a couple of hours to have it done).
-The more your data get wide and diversely structured the more the level of integration
+The more your data get wide and diversely structured the more the integration level
 will be high.
 See the implementation description here to see where your high-level would fit:
 https://www.algolia.com/doc/guides/getting-started/what-is-algolia/
