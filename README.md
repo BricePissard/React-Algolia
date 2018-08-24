@@ -7,20 +7,24 @@ The JSON datasets have been reformatted and pushed to Algolia server.
 # Installation
 To launch this application please follow this instructions:
 - Install in your local computer ``node``, ``yarn`` and ``npx``
-- Download the source files to your local computer in ``your-folder``
+- Download the source files to your local computer in ``React-Algolia``
+```sh
+git clone git://github.com/BricePissard/React-Algolia.git
+```
 - Install the node dependencies:
 ```sh
-cd your_folder
+cd React-Algolia
 yarn install
 ```
-- Start the local node server:
+- Start your local node server with the React-Algolia Web-App:
 ```sh
 yarn start
 ```
-
+<br/><br/><br/>
 A demo have been deployed here:
+<br/>
 http://algolia.robby.ai:3000
-
+<br/><br/><br/>
 
 # Extra Features
 The purpose of this demo is to show how simple and accurate are Algolia services so some features have been added:<br/>
@@ -69,7 +73,7 @@ https://www.algolia.com/apps/
 In Algolia web interface an ``Indice`` ``restaurants`` have been created and the data from ``restaurants_merge.json`` have been imported in it.
 
 # Configuration of Algolia Index
-To be able to search through Algolia in the data imported, some settings have to be 
+To be able to search through Algolia in the data imported, some settings have to be
 customized in ``Indices > restaurants > Ranking`` and ``Indices > restaurants > Display``
 ![algolia_ranking](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/algolia_ranking.png)
 ![algolia_display](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/algolia_display.png)
