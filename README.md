@@ -22,6 +22,25 @@ A demo have been deployed here:
 http://algolia.robby.ai:3000
 
 
+# Extra Features
+The purpose of this demo is to show how simple and accurate are Algolia services so some features have been added:<br/>
+- Add statistics on rating and payment modes like the ones next to the food types.<br/><br/>
+![statistics](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/statistics.png)
+
+- Pagination at the bottom of the result list.<br/>
+![pagination](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/pagination.png)
+
+- Responsive CSS UI to adapt the view to the user screen.
+- A specific Mobile UI/UX to provide a better search experience on small devices.<br/>
+![mobile menu](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/preview_mobile_menu.png)
+![mobile](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/preview_mobile.png)
+
+- Add a location search field on the top bar to allow to search for a specific location to find the restaurants nearby.<br/>
+![location search ](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/location_search.png)
+
+- Add the distance in the results of the restaurants if the location filter have been provided.<br/>
+![distance](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/distance.png)
+- Replace images by vectorial font icons (@see https://fontawesome.com/icons)
 
 # Data Manipulation
 To make it works a dataset of a JSON and a CSV files have used:
@@ -47,27 +66,13 @@ A new file is then created locally:
 This file have to be uploaded in Algolia website: <br/>
 https://www.algolia.com/apps/
 <br/>
-In Algolia web interface an ``Indice`` ``restaurants`` is created and the data from ``restaurants_merge.json`` is imported in it.
+In Algolia web interface an ``Indice`` ``restaurants`` have been created and the data from ``restaurants_merge.json`` have been imported in it.
 
-# Extra Features
-The purpose of this demo is to show how simple an accurate are Algolia services so some features have been added:
-- Replace images by vectorial font icons (@see https://fontawesome.com/icons)
-- Add statistics on rating and payment modes like the ones next to the food types.<br/>
-![statistics](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/statistics.png)
-
-- Pagination at the bottom of the result list.<br/>
-![pagination](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/pagination.png)
-
-- Responsive CSS UI to adapt the view to the user screen.
-- A specific Mobile UI/UX to provide a better search experience on small devices.<br/>
-![mobile menu](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/preview_mobile_menu.png)
-![mobile](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/preview_mobile.png)
-
-- Add a location search field on the top bar to allow to search for a specific location to find the restaurants nearby.<br/>
-![location search ](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/location_search.png)
-
-- Add the distance in the results of the restaurants if the location filter have been provided.<br/>
-![distance](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/distance.png)
+# Configuration of Algolia Index
+To be able to search through Algolia in the data imported, some settings have to be 
+customized in ``Indices > restaurants > Ranking`` and ``Indices > restaurants > Display``
+![algolia_ranking](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/algolia_ranking.png)
+![algolia_display](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/algolia_display.png)
 
 
 # Debug

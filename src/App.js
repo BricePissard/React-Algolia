@@ -6,7 +6,6 @@ import React, { Component } from 'react';
 import _ from 'lodash';
 import algoliasearchHelper from 'algoliasearch-helper';
 import algoliasearch from 'algoliasearch';
-
 import SearchMenu from './components/SearchMenu';
 import FoodTypes from './components/FoodTypes';
 import Rating from './components/Rating';

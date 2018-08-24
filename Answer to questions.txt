@@ -11,13 +11,15 @@ Cheers, George
 
 Answer 1:
 Hi George,
-first of all thanks for contacting Algolia, for database concern you're in good hands.
+first of all thanks for contacting Algolia, for database concerns you're in good hands.
 Regarding your questions:
-- A record is the name given to the data you've stored in a database and it is structured as pair of key and value.
+- A record is the name given to the data you've stored in a database and it is
+structured as pair of key/value.
 If you're familiar with Excel let say that a record is the value of a cell.
 - An index is a set of technics that facilitate the access to a given data on a database.
 When you place an index on a database field, it modify the place where the data is
-stored and the its hierarchy structure and several additional data is created to speed-up the search requests.
+stored and the its hierarchy structure to speed-up the search requests.
+Algolia is here to simplify your work to not have to worry about technology.
 
 https://www.algolia.com/doc/guides/ranking/custom-ranking/
 
@@ -32,6 +34,19 @@ so this is inconvenient.
 Regards, Matt
 
 Answer 2:
+Hi Matt,
+We are very sorry here at Algolia to hear that some of our users are not satisfy
+of the services we deliver to them.
+We have updated our UI based on several pointers that show us that most of the
+users are satisfied with this new presentation.
+We really take care of all the opinions, could you dig your problem description
+and present me an alternative so I can forward your request to the product manager
+for later updates.
+At the meantime try to play a bit with our new interface to give it a change to
+fill your needs, some features are now more accessible and prettier organized.
+Thanks for using Algolia,
+Brice
+
 ________________________________________________________________________________
 
 Question 3:
@@ -41,5 +56,20 @@ work for me? What's the high level process look like?
 Regards, Leo
 
 Answer 3:
+Hi Leo,
+first of all thanks for contacting Algolia, for database concerns you're in good hands.
+Algolia provides a set of tools and services to easily integrate database request
+for small and large companies.
+If the data you want to manage through Algolia is small (<500Mo) and simply structured
+(<10 tables) the integration process will be simple (around a couple of hour to have it done).
+The more your data get wide and diversely structured the more the level of integration
+will be high.
+I suggest you to have a look to our Tutorial and API to see what can be done and how:
+https://www.algolia.com/doc/tutorials/
+For the majority of our users the integration of Algolia is very simple and the
+benefits for you are enormous so give it a try!
+Thanks for trusting Algolia,
+Brice
+
 
 ________________________________________________________________________________
