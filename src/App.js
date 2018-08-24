@@ -474,9 +474,11 @@ class App extends Component {
       // -- Filter by location (if geo.lat/geo.lng provided)
       // @see https://www.algolia.com/doc/api-reference/api-parameters/aroundLatLng/
       if (this.state.geo && this.state.geo.latitude && this.state.geo.longitude) {
-        //helper.setQueryParameter('getRankingInfo', true);
+        helper.setQueryParameter('aroundLatLng',
+          this.state.geo.latitude + ',' +
+          this.state.geo.longitude
+        );
         helper.setQueryParameter('aroundRadius', 'all');
-        helper.setQueryParameter('aroundLatLng', this.state.geo.latitude+','+this.state.geo.longitude);
       }
 
       // -- Loach the request.
