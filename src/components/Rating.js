@@ -11,11 +11,11 @@ class Rating extends Component {
 
   constructor(props:Object, state:Object):void
   {
-		try {
-			/*SHOW ME*///Global.console('- Rating.constructor()', Global.PAGE_COLORS.RATING);
-			super(props);
-	    this.state = this.getInitialState.call(this);
-		} catch(err) {
+    try {
+      /*SHOW ME*///Global.console('- Rating.constructor()', Global.PAGE_COLORS.RATING);
+      super(props);
+      this.state = this.getInitialState.call(this);
+    } catch(err) {
       if (err && Global && _.has(Global, 'exception')) {
         Global.exception('Rating.constructor().catch()', err);
       }
@@ -100,8 +100,10 @@ class Rating extends Component {
           key={"stars-"+i}
           className={((this.state.current === i)?'selected':'')}
           onClick={(e:Object):void=>this._update(e,i)}>
-            {this._getStarElement(i,'empty')}
-            {this._getStarElement(i,'full')}
+            <span>
+              {this._getStarElement(i,'empty')}
+              {this._getStarElement(i,'full')}
+            </span>
             <i>{(available[i])?available[i]:((current>=0)?'-':'0')}</i>
         </li>
       );

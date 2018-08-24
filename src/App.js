@@ -21,11 +21,11 @@ class App extends Component {
 
   constructor(props:Object, state:Object):void
   {
-		try {
-			/*SHOW ME*/Global.console('- App.constructor()', Global.PAGE_COLORS.APP);
-			super(props);
-	    this.state = this.getInitialState.call(this);
-		} catch(err) {
+    try {
+      /*SHOW ME*/Global.console('- App.constructor()', Global.PAGE_COLORS.APP);
+      super(props);
+      this.state = this.getInitialState.call(this);
+    } catch(err) {
       if (err && Global && _.has(Global, 'exception')) {
         Global.exception('App.constructor().catch()', err);
       }
@@ -481,12 +481,12 @@ class App extends Component {
         helper.setQueryParameter('aroundRadius', 'all');
       }
 
-      // -- Loach the request.
+      // -- Launch the request.
       helper.search();
       helper.on('result', (content:Object):void => {
         let r:Array<Object> = content.hits || [];
 
-        // -- control the data filtered
+        // -- control the data received
         r = this._filter(r, 'food');
         r = this._filter(r, 'rating');
         r = this._filter(r, 'payment');

@@ -12,7 +12,8 @@ button:focus {outline:none;}
 a {text-decoration:none;color:#454545;}
 
 body {color:#454545;margin:0;padding:0;background-image:url("assets/img/background_@2X.png");background-repeat:repeat;background-size:5% auto;font-family:'Arial',sans-serif;}
-.App {min-height:100%;text-align:center;padding:5% 10%;}
+#root {text-align:center;}
+.App {min-height:100%;min-width:85%;text-align:center;padding:5% 10%;display:inline-block;max-width:1100px;}
 
 /* -- HEADER -- */
 .App > header {background-color:#1A5D83;padding:2% 0;display:flex;align-content:center;justify-content:center;position:relative;}
@@ -24,7 +25,7 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
       .App > header .location > div input {background-color:transparent;border:none;height:100%;padding-left:12px;margin:0;}
       .autocomplete-dropdown-container {font-size:1.4vw;box-shadow:0 4px 9px rgba(0,0.1,0.6,0.05), 0 1px 2px rgba(0,0,0,0.1);width:calc(100% + 5px);margin-top:-2px;}
         .autocomplete-dropdown-container div span {font-size:1.3vw;line-height:2.5vw;padding:5px 0 5px 6%;border-bottom:1px solid #f9f9f9;display:inline-block;}
-    .App > header .location button {cursor:pointer;position:absolute;top:1px;right:0;font-size:15;line-height:26px;color:rgba(100,100,100,.4);width:4vw;border-radius:0;border:none;height:4vw;min-width:0;margin:0;display:block;background-color:transparent;transition:all 0.2s cubic-bezier(.25,.8,.25,1);}
+    .App > header .location button {cursor:pointer;position:absolute;top:1px;right:0;font-size:21px;line-height:26px;color:rgba(100,100,100,.4);width:4vw;border-radius:0;border:none;height:4vw;min-width:0;margin:0;display:block;background-color:transparent;transition:all 0.2s cubic-bezier(.25,.8,.25,1);}
     .App > header .location button:hover,
     .App > header .location button:active {color:rgba(100,100,100,.8);}
 
@@ -51,25 +52,25 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
         .App > section > menu .rating ul li b {margin-left:1%;}
         .App > section > menu .rating ul li b.full {color:#ddd;}
         .App > section > menu .rating ul li b.empty {color:#FFA15B;}
-        .App > section > menu .rating ul li i {font-size:1.3vw;line-height:2.3vw;color:#ccc;display:inline-block;text-align:right;float:right;}
+        .App > section > menu .rating ul li i {font-size:1.3vw;line-height:2.3vw;color:#fff;display:inline-block;text-align:right;float:right;}
     /* -- Payment Mode -- */
     .App > section > menu .payment {margin:2vw 1vw 1vw 1vw;}
       .App > section > menu .payment ul li {font-size:1.6vw;letter-spacing:.5px;padding-left:2%;margin:2% 0;}
       .App > section > menu .payment ul li:hover,
       .App > section > menu .payment ul li:active {cursor:pointer;color:#fff;background-color:#4A96C1;}
         .App > section > menu .payment ul li svg {margin-right:5%;}
-        .App > section > menu .payment ul li i {font-size:1.3vw;line-height:2.3vw;color:#ccc;display:inline-block;text-align:right;float:right;margin-right:3%;}
+        .App > section > menu .payment ul li i {font-size:1.3vw;line-height:2.3vw;color:#fff;display:inline-block;text-align:right;float:right;margin-right:3%;}
 
   /* -- Result List -- */
   .results {width:70%;align-items:stretch;background-color:#fff;display:flex;flex-direction:column;transition:all 0.2s cubic-bezier(.25,.8,.25,1);}
-    .results h1 {height:5vw;vertical-align:middle;text-align:left;padding:5% 0 0 5%;font-size:2vw;overflow:hidden;}
+    .results h1 {height:5vw;vertical-align:middle;text-align:left;padding:5% 0 0 5%;font-size:2vw;}
     .results h1:after{content:"";display:inline-block;height:0.5em;vertical-align:bottom;width:100%;margin-right:-100%;margin-left:20px;border-top:1px solid #ddd;}
       .results h1 i {font-size:1.3vw;font-weight:normal;opacity:.5;margin:0 5px;}
     .results .emptyList {height:100%;vertical-align:middle;padding:6% 0;}
       .results .emptyList h3,
       .results .emptyList h5 {color:#bbb;vertical-align:middle;display:block;justify-items:center;align-items:center;}
       .results .emptyList h3 {font-size:1.7vw;padding:8px 0;}
-      .results .emptyList h5 {font-size:1.2vw;}
+      .results .emptyList h5 {font-size:1.2vw;letter-spacing:.4px;opacity:.8;}
   /* -- Result List > Restaurant row -- */
   .results a.result {cursor:pointer;padding-left:1vw;width:98%;display:flex;align-items:flex-start;flex-wrap:nowrap;transition:all 0.3s cubic-bezier(.25,.8,.25,1);border-bottom:.5px solid #f6f6f6;}
   .results a.result:hover,
@@ -111,10 +112,54 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
         .pagination > li.active > span {background-color:#4A96C1;color:#fff;}
 
 
+@media screen and (min-width: 1200px) {
+* {font:15px/1.231em Arial,Verdanna,}
+*::-webkit-placeholder {font-size:16px;line-height:18px;}
+::-webkit-input-placeholder {font-size:16px;line-height:18px;}
+
+.App > header {padding:14px 0;}
+  .App > header input {height:50px;}
+  .App > header .location {top:20px;}
+    .App > header .location > div {height:50px;}
+      .App > header .location button {height:50px;width:45px;}
+    .autocomplete-dropdown-container div span {font-size:15px;line-height:18px;}
+.App > section .title {font-size:18px;}
+.App > section > menu {padding:30px 10px 20px 25px;max-width:220px;}
+  .App > section > menu ul {margin-right:0;width:93%;}
+    .App > section > menu .food ul li span {font-size:17px;}
+    .App > section > menu .food ul li i {font-size:13px;line-height:20px;}
+    .App > section > menu .rating ul li {padding:0 7px 0;margin:0;font-size:23px;clear:both;}
+      .App > section > menu .rating ul li b {margin-left:2px;font-size:18px;}
+      .App > section > menu .rating ul li i {font-size:13px;line-height:30px;}
+    .App > section > menu .payment {margin:0;}
+      .App > section > menu .payment ul li {font-size:16px;letter-spacing:.3px;padding:6px 6px;}
+        .App > section > menu .payment ul li i {font-size:13px;line-height:20px;}
+
+.results {width:calc(100% - 220px);}
+  .results h1 {font-size:20px;height:60px;padding:30px 0 0 26px;}
+    .results h1 i {font-size:16px;}
+  .results .emptyList h3 {font-size:19px;}
+  .results .emptyList h5 {font-size:15px;}
+  .results a.result {padding-left:10px;}
+    .results a.result article h3 {padding-top:15px;font-size:22px;}
+    .results a.result .imgC {width:calc(150px + 5%);}
+      .results a.result .imgC > img {height:150px;width:150px;margin:20px 15px;}
+    .results a.result article {font-size:15px;margin:10px 0 0 8px;}
+      .results a.result article > div {font-size:20px;padding-top:10px;}
+      .results a.result article h3 {font-weight:500;}
+      .results a.result article span {font-size:16px;line-height:23px;}
+        .results a.result article > div ul {margin:0 0 0 5px;}
+          .results a.result article > div ul li {font-size:17px;height:20px;width:20px;margin-right:0;}
+        .results a.result article > em {font-size:13px;line-height:22px;}
+
+.pagination > li > a,
+.pagination > li > span {font-size:15px;padding:8px 18px;}
+}
+
 
 @media all and (max-width:640px) {
-*::-webkit-placeholder {color:#ccc;font-weight:normal;font-size:12px;line-height:15px;letter-spacing:.2px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
-::-webkit-input-placeholder {color:#ccc;font-weight:normal;font-size:12px;line-height:15px;letter-spacing:.2px;vertical-align:middle;text-rendering:optimizelegibility;opacity:1;font-family:Arial,Verdanna,Sans-serif;font-weight:normal;}
+*::-webkit-placeholder {font-size:12px;line-height:15px;}
+::-webkit-input-placeholder {font-size:12px;line-height:15px;}
 
 body,.App, .App > section {height:calc(100vh - 52px);}
 .App {padding:0;}

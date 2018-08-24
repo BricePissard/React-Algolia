@@ -20,10 +20,10 @@ yarn install
 ```sh
 yarn start
 ```
-<br/><br/><br/>
+<br/><br/>
 A demo have been deployed here:
 <br/>
-http://algolia.robby.ai:3000
+http://algolia.robby.ai
 <br/><br/><br/>
 
 # Extra Features
@@ -40,11 +40,15 @@ The purpose of this demo is to show how simple and accurate are Algolia services
 ![mobile](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/preview_mobile.png)
 
 - Add a location search field on the top bar to allow to search for a specific location to find the restaurants nearby.<br/>
-![location search ](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/location_search.png)
+![location search](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/location_search.png)
+
+- Add a current geo-location detector: Press the icon to get the user position detected.<br>
+![geolocation](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/geolocation.png)
+![geolocation loader](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/geolocation_loader.png)
 
 - Add the distance in the results of the restaurants if the location filter have been provided.<br/>
 ![distance](https://raw.githubusercontent.com/BricePissard/React-Algolia/master/public/distance.png)
-- Replace images by vectorial font icons (@see https://fontawesome.com/icons)
+- Replace images by vectorial font icons (https://fontawesome.com/icons)
 
 # Data Manipulation
 To make it works a dataset of a JSON and a CSV files have used:

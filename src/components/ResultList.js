@@ -12,11 +12,11 @@ class ResultList extends Component {
 
   constructor(props:Object, state:Object):void
   {
-		try {
-			/*SHOW ME*///Global.console('- ResultList.constructor()', Global.PAGE_COLORS.RESULT_LIST);
-			super(props);
-	    this.state = this.getInitialState.call(this);
-		} catch(err) {
+    try {
+      /*SHOW ME*///Global.console('- ResultList.constructor()', Global.PAGE_COLORS.RESULT_LIST);
+      super(props);
+      this.state = this.getInitialState.call(this);
+    } catch(err) {
       if (err && Global && _.has(Global, 'exception')) {
         Global.exception('ResultList.constructor().catch()', err);
       }
@@ -105,7 +105,6 @@ class ResultList extends Component {
   {
     try {
       /*SHOW ME*///Global.console('- ResultList._getEmptyList()', Global.PAGE_COLORS.RESULT_LIST);
-
       return (
         <div className={"emptyList"}>
           <h3>:( No Restaurants found</h3>
