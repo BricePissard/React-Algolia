@@ -107,7 +107,7 @@ class ResultList extends Component {
       /*SHOW ME*///Global.console('- ResultList._getEmptyList()', Global.PAGE_COLORS.RESULT_LIST);
       return (
         <div className={"emptyList"}>
-          <h3>:( No Restaurants found</h3>
+          <h3>No Restaurants found</h3>
           <h5>Please affinates your request with filters</h5>
         </div>
       );

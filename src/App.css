@@ -52,14 +52,19 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
         .App > section > menu .rating ul li b {margin-left:1%;}
         .App > section > menu .rating ul li b.full {color:#ddd;}
         .App > section > menu .rating ul li b.empty {color:#FFA15B;}
-        .App > section > menu .rating ul li i {font-size:1.3vw;line-height:2.3vw;color:#fff;display:inline-block;text-align:right;float:right;}
+        .App > section > menu .rating ul li i {font-size:1.2vw;line-height:2vw;color:#fff;display:inline-block;text-align:right;float:right;}
+        .App > section > menu .rating ul li.selected b,
+        .App > section > menu .rating ul li:hover b,
+        .App > section > menu .rating ul li:hover i {color:#fff;}
+        .App > section > menu .rating ul li.selected b.full,
+        .App > section > menu .rating ul li:hover b.full {opacity:.5;}
     /* -- Payment Mode -- */
     .App > section > menu .payment {margin:2vw 1vw 1vw 1vw;}
-      .App > section > menu .payment ul li {font-size:1.6vw;letter-spacing:.5px;padding-left:2%;margin:2% 0;}
+      .App > section > menu .payment ul li {font-size:1.5vw;letter-spacing:.4px;padding-left:2%;margin:2% 0;}
       .App > section > menu .payment ul li:hover,
       .App > section > menu .payment ul li:active {cursor:pointer;color:#fff;background-color:#4A96C1;}
         .App > section > menu .payment ul li svg {margin-right:5%;}
-        .App > section > menu .payment ul li i {font-size:1.3vw;line-height:2.3vw;color:#fff;display:inline-block;text-align:right;float:right;margin-right:3%;}
+        .App > section > menu .payment ul li i {font-size:1.2vw;line-height:2vw;color:#fff;display:inline-block;text-align:right;float:right;margin-right:3%;}
 
   /* -- Result List -- */
   .results {width:70%;align-items:stretch;background-color:#fff;display:flex;flex-direction:column;transition:all 0.2s cubic-bezier(.25,.8,.25,1);}
@@ -135,7 +140,7 @@ body {color:#454545;margin:0;padding:0;background-image:url("assets/img/backgrou
       .App > section > menu .payment ul li {font-size:16px;letter-spacing:.3px;padding:6px 6px;}
         .App > section > menu .payment ul li i {font-size:13px;line-height:20px;}
 
-.results {width:calc(100% - 220px);}
+.results {width:calc(100% - 220px);min-width:auto;}
   .results h1 {font-size:20px;height:60px;padding:30px 0 0 26px;}
     .results h1 i {font-size:16px;}
   .results .emptyList h3 {font-size:19px;}

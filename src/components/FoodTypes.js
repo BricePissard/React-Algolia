@@ -10,11 +10,11 @@ class FoodTypes extends Component {
 
   constructor(props:Object, state:Object):void
   {
-		try {
-			/*SHOW ME*///Global.console('- FoodTypes.constructor()', Global.PAGE_COLORS.FOOD_TYPES);
-			super(props);
-	    this.state = this.getInitialState.call(this);
-		} catch(err) {
+    try {
+      /*SHOW ME*///Global.console('- FoodTypes.constructor()', Global.PAGE_COLORS.FOOD_TYPES);
+      super(props);
+      this.state = this.getInitialState.call(this);
+    } catch(err) {
       if (err && Global & _.has(Global, 'exception')) {
         Global.exception('FoodTypes.constructor().catch()', err);
       }
@@ -106,7 +106,6 @@ class FoodTypes extends Component {
       /*SHOW ME*/Global.console('- FoodTypes._update()', Global.PAGE_COLORS.FOOD_TYPES, food);
       food = ((this.state.food === food.name)? null:food.name || null);
       this.setState({food}, ():void => {
-        console.log('herrr');
         this.props.update(food);
       });
     } catch(err) {
