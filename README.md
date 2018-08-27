@@ -16,9 +16,13 @@ git clone git://github.com/BricePissard/React-Algolia.git
 cd React-Algolia
 yarn install
 ```
-- Start your local node server with the React-Algolia Web-App:
+- Start your local node server for testing with the React-Algolia Web-App:
 ```sh
 yarn start
+```
+- Generate the build of the Web-App:
+```sh
+npm run build
 ```
 <br/><br/>
 A demo have been deployed here:
