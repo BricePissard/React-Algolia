@@ -14,11 +14,11 @@ class SearchMenu extends Component {
 
   constructor(props:Object, state:Object):void
   {
-		try {
-			/*SHOW ME*///Global.console('- SearchMenu.constructor()', Global.PAGE_COLORS.SEARCH_BAR);
-			super( props );
-	    this.state = this.getInitialState.call( this );
-		} catch(err) {
+    try {
+      /*SHOW ME*///Global.console('- SearchMenu.constructor()', Global.PAGE_COLORS.SEARCH_BAR);
+      super(props);
+      this.state = this.getInitialState.call(this);
+    } catch(err) {
       if (err && Global && _.has(Global, 'exception')) {
         Global.exception('SearchMenu.constructor().catch()', err);
       }

@@ -11,11 +11,11 @@ class PaymentMode extends Component {
 
   constructor(props:Object, state:Object):void
   {
-		try {
-			/*SHOW ME*///Global.console('- PaymentMode.constructor()', Global.PAGE_COLORS.PAYMENT_MODE);
-			super(props);
-	    this.state = this.getInitialState.call(this);
-		} catch(err) {
+    try {
+      /*SHOW ME*///Global.console('- PaymentMode.constructor()', Global.PAGE_COLORS.PAYMENT_MODE);
+      super(props);
+      this.state = this.getInitialState.call(this);
+    } catch(err) {
       if (err && Global && _.has(Global, 'exception')) {
         Global.exception('PaymentMode.constructor().catch()', err);
       }

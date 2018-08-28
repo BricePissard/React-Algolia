@@ -457,10 +457,10 @@ class App extends Component {
       // -- Filter by star rating (defined Facet)
       // @see https://www.algolia.com/doc/api-reference/api-parameters/numericFilters/
       const rate:number = this.state.rating.current;
-      if (rate && rate >= 0) {
+      if (rate >= 0) {
         helper.setQueryParameter('numericFilters', [
-          "stars_count >= " + ((rate===0)? 0 : rate - 0.5),
-          "stars_count < "  + ((rate===0)? 1 : rate + 0.5)
+          "stars_count >= "+ ((rate===0)? 0 : rate - 0.5),
+          "stars_count < " + ((rate===0)? 1 : rate + 0.5)
         ]);
       }
 
@@ -468,14 +468,14 @@ class App extends Component {
       // @see https://www.algolia.com/doc/api-reference/api-parameters/facetFilters/
       const paymentMode:string = this.state.paymentModes.current;
       if (_.size(paymentMode)>0) {
-        helper.setQueryParameter('facetFilters', ['payment_options:' + paymentMode]);
+        helper.setQueryParameter('facetFilters', ['payment_options:'+paymentMode]);
       }
 
       // -- Filter by location (if geo.lat/geo.lng provided)
       // @see https://www.algolia.com/doc/api-reference/api-parameters/aroundLatLng/
       if (this.state.geo && this.state.geo.latitude && this.state.geo.longitude) {
         helper.setQueryParameter('aroundLatLng',
-          this.state.geo.latitude + ',' +
+          this.state.geo.latitude +','+
           this.state.geo.longitude
         );
         helper.setQueryParameter('aroundRadius', 'all');
@@ -483,53 +483,56 @@ class App extends Component {
 
       // -- Launch the request.
       helper.search();
-      helper.on('result', (content:Object):void => {
-        let r:Array<Object> = content.hits || [];
-
-        // -- control the data received
-        r = this._filter(r, 'food');
-        r = this._filter(r, 'rating');
-        r = this._filter(r, 'payment');
-
-        const foodTypesAvailable:Array<Object> = content.getFacetValues("food_type") || [];
-        const ratingAvailable:Array<Object> = content.getFacetValues("stars_count") || [];
-        const paymentAvailable:Array<Object> = content.getFacetValues("payment_options") || [];
-
-        let search:Object = this.state.search;
-            search.results = r;
-            search.time = content.processingTimeMS;
-            search.total = content.nbHits;
-
-        let foodTypes:Object = this.state.foodTypes;
-            foodTypes.available = foodTypesAvailable;
-
-        let paymentModes:Array<Object> = this.state.paymentModes;
-            paymentModes.available = paymentAvailable;
-
-        // -- caltulate the ranking stars average occurances
-        let s:Array<number> = [];
-        let rating:Object = this.state.rating;
-        _.orderBy(ratingAvailable,'name','asc')
-        .map((e:Object):Object=>{return{r:Math.round(parseFloat(e.name)),c:e.count}})
-        .map((e:Object):void=>{for(var i=0;i<=5;i++){if(!s[i]){s[i]=0}if(e.r>=i&&e.r<i+1){s[i]+=e.c;}}return true;});
-        rating.available = s;
-
-        /*SHOW ME*/Global.console("- App._updateSearch() > helper.on('result').then(...)", Global.PAGE_COLORS.ALGOLIA, {content, r});
-
-        this._updateRender = true;
-        this.setState({
-          search,
-          foodTypes,
-          rating,
-          paymentModes,
-          pages: this._getResetPage()
-        });
-      });
+      helper.on('result', this._setResults.bind(this));
     } catch(err) {
       if (err && Global && _.has(Global, 'exception')) {
         Global.exception('App._updateSearch().catch()', err);
       }
     }
+  }
+
+  _setResults(content:Object):void
+  {
+    let r:Array<Object> = content.hits || [];
+
+    // -- control the data received
+    r = this._filter(r, 'food');
+    r = this._filter(r, 'rating');
+    r = this._filter(r, 'payment');
+
+    const foodTypesAvailable:Array<Object> = content.getFacetValues("food_type") || [];
+    const ratingAvailable:Array<Object> = content.getFacetValues("stars_count") || [];
+    const paymentAvailable:Array<Object> = content.getFacetValues("payment_options") || [];
+
+    let search:Object = this.state.search;
+        search.results = r;
+        search.time = content.processingTimeMS;
+        search.total = content.nbHits;
+
+    let foodTypes:Object = this.state.foodTypes;
+        foodTypes.available = foodTypesAvailable;
+
+    let paymentModes:Array<Object> = this.state.paymentModes;
+        paymentModes.available = paymentAvailable;
+
+    // -- caltulate the ranking stars average occurances
+    let s:Array<number> = [];
+    let rating:Object = this.state.rating;
+    _.orderBy(ratingAvailable,'name','asc')
+    .map((e:Object):Object=>{return{r:Math.round(parseFloat(e.name)),c:e.count}})
+    .map((e:Object):void=>{for(var i=0;i<=5;i++){if(!s[i]){s[i]=0}if(e.r>=i&&e.r<i+1){s[i]+=e.c;}}return true;});
+    rating.available = s;
+
+    /*SHOW ME*/Global.console("- App._updateSearch() > helper.on('result').then(...)", Global.PAGE_COLORS.ALGOLIA, {content, r});
+
+    this._updateRender = true;
+    this.setState({
+      search,
+      foodTypes,
+      rating,
+      paymentModes,
+      pages: this._getResetPage()
+    });
   }
 
   _filter(rr:Array<Object>, action:string):Array<Object>

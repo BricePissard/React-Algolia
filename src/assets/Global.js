@@ -5,7 +5,7 @@
 import Functions from "./Functions";
 import Colors from './Colors';
 const Global:Object = {
-	DEBUG	: (process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator)?false:true,
+	DEBUG	: (process.env.NODE_ENV==='production'&&'serviceWorker' in navigator)?false:true,
 
 	ALGOLIA_APP_ID		: 'OG7U741TTE',
 	ALGOLIA_APP_KEY		: '2614df083d210d87e7c6b113028ac73a',

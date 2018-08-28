@@ -4,7 +4,7 @@
 
 import _ from "lodash";
 
-const __DEV__:boolean = ((process.env.NODE_ENV === 'production' && 'serviceWorker' in navigator) ? false : true);
+const __DEV__:boolean = ((process.env.NODE_ENV==='production' && 'serviceWorker' in navigator)?false:true);
 const _voidFunc:Function = ():void => {};
 
 /**
@@ -14,14 +14,15 @@ const _voidFunc:Function = ():void => {};
  * @param {any}    data to display
  * @return {void}
  **/
-const _console:Function = ( msg:string, colors:Object, data?:any ):void =>
+const _console:Function = (msg:string, colors:Object, data?:any):void =>
 {
-  if ( __DEV__ ) {
+  if (__DEV__) {
     console.log(
-      '%c ' + msg + ' ',
-        'background: ' + ( ( _.has( colors, 'background' ) ) ? colors.background : '#FFFFFF' ) + '; ' +
-        'color: '      + ( ( _.has( colors, 'color'      ) ) ? colors.color      : '#000000' ),
-      ( ( data ) ? data : '' )
+      '%c '+msg+' ',
+        'background: '+((_.has(colors, 'background'))?colors.background:'#FFFFFF')
+        + '; ' +
+        'color: '+((_.has(colors, 'color'))? colors.color:'#000000'),
+      ((data)? data:'')
     );
     //const msg_str:string = Strings.parseMsg( msg );
     //if ( msg_str && Reactotron && _.has( Reactotron, 'log' ) ) {
@@ -32,13 +33,13 @@ const _console:Function = ( msg:string, colors:Object, data?:any ):void =>
 
 const _exception:Function = (ex:Object, context?:Object = {}):void =>
 {
-  //if ( Raven && _.has( Raven, 'captureException' ) ) {
-  //  Raven.captureException( ex, { extra: context });
+  //if (Raven && _.has(Raven, 'captureException')) {
+  //  Raven.captureException(ex, {extra: context});
   //}
-  //if ( JSON && Analytics && _.has( Analytics, 'trackException' ) ) {
-  //  Analytics.trackException( JSON.stringify( { ex, context } ) );
+  //if (JSON && Analytics && _.has(Analytics, 'trackException')) {
+  //  Analytics.trackException( JSON.stringify({ex, context }) );
   //}
-  if ( __DEV__ ) {
+  if (__DEV__) {
     console.warn(ex, context);
   }
 };
