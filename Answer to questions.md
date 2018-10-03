@@ -1,4 +1,4 @@
-Question 1:
+# Question 1:
 Hello,
 I'm new to search engines, and there are a lot of concepts I'm not educated on.
 To make my onboarding smoother, it'd help if you could provide me with some
@@ -9,7 +9,7 @@ I'm also struggling with understanding what types of metrics would be useful to
 include in the "Custom Ranking."
 Cheers, George
 
-Answer 1:
+## Answer 1:
 Hi George,
 first of all thanks for contacting Algolia, for database concerns you're in good hands!
 Regarding your questions:
@@ -39,7 +39,7 @@ Brice
 
 ________________________________________________________________________________
 
-Question 2:
+# Question 2:
 Hello,
 Sorry to give you the kind of feedback that I know you do not want to hear,
 but I really hate the new dashboard design. Clearing and deleting indexes are
@@ -48,7 +48,7 @@ so this is inconvenient.
 Regards, Matt
 
 
-Answer 2:
+## Answer 2:
 Hi Matt,
 
 We are very sorry here at Algolia to hear that some of our users are not satisfy
@@ -66,14 +66,14 @@ Brice
 
 ________________________________________________________________________________
 
-Question 3:
+# Question 3:
 Hi,
 I'm looking to integrate Algolia in my website. Will this be a lot of development
 work for me? What's the high level process look like?
 Regards, Leo
 
 
-Answer 3:
+## Answer 3:
 Hi Leo,
 
 first of all thanks for contacting Algolia, for database concerns you're in good hands!
